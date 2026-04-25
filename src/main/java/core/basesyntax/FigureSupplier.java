@@ -3,46 +3,31 @@ package core.basesyntax;
 import java.util.Random;
 
 public class FigureSupplier {
-        Random random = new Random(); 
-        ColorSupplier colorSupplier = new ColorSupplier(); 
-    
+    private Random random = new Random();
+    private ColorSupplier colorSupplier = new ColorSupplier();
+    private int value = random.nextInt(10) + 1;
 
     public Figure getRandomFigure() {
-
         switch (random.nextInt(5)) {
             case 0:
-
-               return new Circle(random.nextInt(10) + 1, colorSupplier.getRandomColor());
-                
+                return new Circle(value, colorSupplier.getRandomColor());
             case 1:
-                
-                return new Square(random.nextInt(10) + 1, colorSupplier.getRandomColor()); 
-            
+                return new Square(value, colorSupplier.getRandomColor());
             case 2:
-                
-                return new RightTriangle(random.nextInt(10) + 1, random.nextInt(10), colorSupplier.getRandomColor());
-
+                return new RightTriangle(value, value, colorSupplier.getRandomColor());
             case 3:
-                
-                return new Rectangle(random.nextInt(10) + 1, random.nextInt(10), colorSupplier.getRandomColor());
-
+                return new Rectangle(value, value, colorSupplier.getRandomColor());
             case 4:
-                
-                return new IsoscelesTrapezoid(random.nextInt(10) + 1, random.nextInt(10), random.nextInt(10), colorSupplier.getRandomColor());
-
-
+                return new IsoscelesTrapezoid(value, value, value,
+                        colorSupplier.getRandomColor());
             default:
-
-                return new Circle(random.nextInt(10) + 1, colorSupplier.getRandomColor());
-           
+                return new Circle(value, colorSupplier.getRandomColor());
         }
 
     }
 
     public Figure getDefaultFigure() {
-
-        return new Circle(10, "white"); 
- 
+        return new Circle(10, "white");
     }
-    
+
 }
