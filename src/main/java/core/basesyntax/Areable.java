@@ -1,7 +1,7 @@
 package core.basesyntax;
 
- public interface Areable {
- 
-    double getArea();  
-    
+public interface Areable {
+
+    double getArea();
+
 }
